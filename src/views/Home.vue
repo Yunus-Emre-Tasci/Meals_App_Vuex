@@ -8,7 +8,7 @@
      <router-link :to="{name:'byLetter', params:{letter}}" v-for="letter of letters" :key="letter">
         {{ letter }}
      </router-link>
-     <pre>{{ ingredients }}</pre>
+     <!-- <pre>{{ ingredients }}</pre> -->
   </div>
 </template>
 

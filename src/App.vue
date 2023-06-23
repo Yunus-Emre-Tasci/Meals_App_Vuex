@@ -5,14 +5,14 @@
         Home
       </router-link>
       <div class="flex gap-2">
-        <router-link to="/" class="px-3 py-2 rounded h-full transition-colors hover:bg-purple-200">
+        <router-link :to="{name:'byName'}" class="px-3 py-2 rounded h-full transition-colors hover:bg-purple-200">
           Search Meals
         </router-link>
-        <router-link to="/" class="px-3 py-2 rounded h-full transition-colors hover:bg-purple-200">
-          Search Meals
+        <router-link :to="{name:'byLetter'}" class="px-3 py-2 rounded h-full transition-colors hover:bg-purple-200">
+          Meals By Letter
         </router-link>
-        <router-link to="/" class="px-3 py-2 rounded h-full transition-colors hover:bg-purple-200">
-          Search Meals
+        <router-link :to="{name:'byIngredient'}" class="px-3 py-2 rounded h-full transition-colors hover:bg-purple-200">
+          Meals By Ingredients
         </router-link>
       </div>
     </header>
