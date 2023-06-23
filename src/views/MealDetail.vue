@@ -7,6 +7,16 @@
         <div><strong class="font-bold">Area:</strong>{{ meal.strArea }}</div>
         <div><strong class="font-bold">Tags:</strong>{{ meal.strTags }}</div>
       </div>
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div>
+            <h2 class="text-2xl font-semibold mb-3">Ingredients</h2>
+            <ul>
+                <template v-for="(el,index) of new Array(20)" >
+                  <li :key="index" v-if="meal[`strIngredient${index+1}`]">{{index+1}}. {{ meal[`strIngredient${index+1}`] }}</li>
+                </template>
+            </ul>
+        </div>
+      </div>
    </div>
 </template>
 
