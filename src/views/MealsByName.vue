@@ -2,11 +2,13 @@
     <div class="p-6">
         <input type="text" v-model="keyword" class="rounded border-2 border-gray-200 w-full" placeholder="Search for Meals" @change="searchMeals"/>
     </div>
-    <!-- <pre>{{ meals }}</pre> -->
+    <div>
+        <pre>{{ meals }}</pre>
+    </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref,computed } from "vue";
 import store from "../store"
 
 const keyword=ref("")
