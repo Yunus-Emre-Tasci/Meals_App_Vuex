@@ -2,17 +2,14 @@
     <div class="p-8 pb-0">
         <input type="text" v-model="keyword" class="rounded border-2 border-gray-200 w-full" placeholder="Search for Meals" @change="searchMeals"/>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 p-8">
-        <MealItem v-for="meal of meals" :meal="meal" :key="meal.idMeal"/>
-    </div>
+    <Meals :meals="meals"/>
 </template>
 
 <script setup>
 import { ref,computed, onMounted } from "vue";
 import store from "../store"
 import { useRoute } from "vue-router";
-import YouTubeButton from "../components/YouTubeButton.vue";
-import MealItem from "../components/MealItem.vue";
+import Meals from "../components/Meals.vue"
 
 const route=useRoute()
 const keyword=ref("")
