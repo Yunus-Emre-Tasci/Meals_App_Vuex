@@ -2,7 +2,9 @@
   <div class="bg-gray-100 min-h-full">
     <Navbar/>
     <main>
-      <router-view/>
+      <div class="max-w-[1200px] mx-auto">
+      <router-view />
+      </div>
     </main>
   </div>
 </template>
