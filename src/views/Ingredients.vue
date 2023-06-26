@@ -7,7 +7,7 @@
     <input
       type="text"
       v-model="keyword"
-      class="rounded border-2 bg-white border-gray-200 focus:ring-purple-500 focus:border-purple-500 mb-3 w-full"
+      class="rounded border-2  bg-white border-gray-200 focus:ring-purple-500 focus:border-purple-500 mb-3 w-full"
       placeholder="Search for Ingredients"
     />
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
