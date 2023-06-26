@@ -5,7 +5,7 @@
            </router-link>
            <div class="p-3">
             <h3 class="font-bold">{{ meal.strMeal }}</h3>
-           <p class="mb-4"> {{ $filters.truncateWords(meal.strInstructions, 20) }}</p>
+           <p class="mb-4"> {{ $filters.truncateWords(meal.strInstructions, 20) }}...</p>
            <div class="text-center">
             <YouTubeButton :href="meal.strYoutube">YouTube</YouTubeButton>
            </div>
