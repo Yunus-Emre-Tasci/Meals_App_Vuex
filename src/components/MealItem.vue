@@ -5,7 +5,7 @@
            </router-link>
            <div class="p-3">
             <h3 class="font-bold">{{ meal.strMeal }}</h3>
-           <p class="mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum maxime quas porro repudiandae voluptate praesentium doloremque ea nemo eum omnis.</p>
+           <p class="mb-4"> {{ $filters.truncateWords(meal.strInstructions, 20) }}</p>
            <div class="text-center">
             <YouTubeButton :href="meal.strYoutube">YouTube</YouTubeButton>
            </div>
@@ -15,7 +15,8 @@
 
 <script setup>
 import YouTubeButton from './YouTubeButton.vue';
-
+// import {truncateWords} from "../filters"
+ 
   const {meal}=defineProps({
     meal:Object
   })
