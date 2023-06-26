@@ -1,7 +1,8 @@
 <template>
    <div class="p-8">
        <h1 class="text-4xl font-bold mb-4">Ingredients</h1>
-      <router-link :to="{name:'byIngredient', params:{ingredient}}" class="bg-white block rounded p-3 mb-3 shadow" :key="ingredient.idIngredient" v-for="ingredient of ingredients">
+       <input type="text" v-model="keyword" class="rounded border-2 border-gray-200 w-full mb-3" placeholder="Search for Ingredients"/>
+      <router-link :to="{name:'byIngredient', params:{ingredient:ingredient.strIngredient}}" class="bg-white block rounded p-3 mb-3 shadow" :key="ingredient.idIngredient" v-for="ingredient of filteredIngredients">
       <h3 class="text-2xl font-bold mb-3">{{ ingredient.strIngredient }}</h3>
       <p>{{ ingredient.strDescription }}</p>
     </router-link>
@@ -9,17 +10,20 @@
 </template>
 
 <script setup>
-import { onMounted,ref } from "vue";
+import { computed, onMounted,ref } from "vue";
 import axiosClient from "../../axiosClient";
 
-
-
+const keyword=ref("")
 const ingredients=ref([])
+const filteredIngredients=computed(()=>{
+    if(!filteredIngredients) return ingredients
+    return ingredients.value.filter(i=>i.strIngredient.toLowerCase().includes(keyword.value.toLowerCase()))
+})
 
-onMounted(async()=>{
-    const response =await axiosClient.get("list.php?i=list")
-    console.log(response.data);
-    ingredients.value=response.data
+onMounted(()=>{
+    axiosClient.get("list.php?i=list").then(({data})=>{
+     ingredients.value=data.meals
+    })
 })
 
 </script>
